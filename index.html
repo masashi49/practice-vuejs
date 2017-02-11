@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vues</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="./script.js"></script>…
+
+</head>
+<body>
+
+
+
+  <div id="app">
+  <app-header></app-header>
+    {{task.length/20}}<input name="" id="" type="text" v-model="task" @keyup="input">
+
+
+
+    <p v-if="error" >文字がオーバーしています</p>
+
+    <br>
+    <div v-if="task"><button @click="add">登録</button></div>
+
+
+
+
+    <div v-else="task"><p>フォームが未入力です</p></div>
+
+
+    <ul style="background-color:#ffff33;">
+      <app-list v-for="item in task_list" :item="item"></app-list>
+    </ul>
+
+
+    <br>
+
+    <ul style="background-color:#ff3366;">
+      <app-list item="うみにいく"></app-list>
+      <app-list item="本を買う"></app-list>
+    </ul>
+
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+  <script>
+    /*
+
+    *     new Vue({
+            el: '#app',
+             data: {
+             　message:'aiaiaia',
+             task:'tasktask'
+             }
+            　appの中で動くということ
+             appのとそで書くと反応しない。
+     })
+
+
+
+
+     {{hoge}}
+     この書き方でワードをはめ込んでいく
+     {{}}
+     bladeのように計算もできたリス。
+
+
+
+    * */
+  </script>
+
+
+
+
+
+ <template id="template-header">
+  <div>テンプレートヘッダーです</div>
+ </template>
+
+
+
+
+
+  <template id="template-list">
+    <li>
+      {{item}}
+      <buttn href="">削除</buttn>
+    </li>
+  </template>
+
+
+
+</body>
+</html>
