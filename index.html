@@ -13,29 +13,28 @@
 
 </head>
 <body>
-
-
-
   <div id="app">
   <app-header></app-header>
     {{task.length/20}}<input name="" id="" type="text" v-model="task" @keyup="input">
 
-
-
     <p v-if="error" >文字がオーバーしています</p>
 
-    <br>
     <div v-if="task"><button @click="add">登録</button></div>
-
-
-
 
     <div v-else="task"><p>フォームが未入力です</p></div>
 
-
+    <br><br>
     <ul style="background-color:#ffff33;">
       <app-list v-for="item in task_list" :item="item"></app-list>
     </ul>
+
+
+    <app-content></app-content>
+
+
+
+
+
 
 
     <br>
@@ -44,7 +43,6 @@
       <app-list item="うみにいく"></app-list>
       <app-list item="本を買う"></app-list>
     </ul>
-
 
 <app-footer></app-footer>
 
